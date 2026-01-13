@@ -1,87 +1,76 @@
 # Customer Churn Prediction Web Application
 
 ## Project Overview
-Customer churn refers to customers leaving a service or stopping their subscription. Retaining existing customers is more cost-effective than acquiring new ones, making churn prediction a critical business problem.
+Customer churn refers to customers leaving or discontinuing a service. Predicting churn in advance helps businesses take proactive steps to retain customers.
 
-This project is a **machine learning–based web application** that predicts whether a customer is likely to churn based on their demographic, service usage, and billing information. The application also uses **SHAP (Explainable AI)** to explain why the model made a particular prediction.
+This project is a **Machine Learning–based web application** that predicts whether a customer is likely to churn based on demographic, service usage, and billing information. The system also uses **SHAP (Explainable AI)** to explain why a particular prediction was made.
 
-The system is built using **Python, Machine Learning, Flask, and SHAP**, and uses the **IBM Telco Customer Churn Dataset**.
+The application is built using **Python, Machine Learning, Flask, and SHAP**, with a simple HTML/CSS frontend for user interaction.
 
 ## Problem Statement
-Businesses face significant losses due to customer churn. Traditional rule-based methods fail to capture complex patterns in customer behavior.
+Customer retention is a major challenge for subscription-based businesses. Traditional rule-based approaches are insufficient to capture complex customer behavior.
 
 This project aims to:
 - Predict customer churn accurately using machine learning
-- Provide transparency using explainable AI (SHAP)
-- Deploy the solution as a user-friendly web application
-
-## Features
-- Machine Learning–based churn prediction
-- Web interface built using Flask and HTML/CSS
-- Uses IBM Telco Customer Churn dataset
-- SHAP explanations for model predictions
-- Scalable and modular project structure
-- Suitable for real-world business use cases
+- Provide transparent and interpretable predictions using SHAP
+- Deploy the solution as a real-world usable web application
 
 ## Dataset
 **IBM Telco Customer Churn Dataset**
 
-- Source: IBM Analytics
-- Records: 7,000+ customers
-- Features include:
-  - Customer demographics
-  - Account information
-  - Services subscribed
-  - Billing and payment details
+- Provided by IBM Analytics
+- Contains customer demographic and service-related information
 - Target variable: `Churn` (Yes / No)
+- Includes features such as:
+  - Tenure
+  - Monthly charges
+  - Contract type
+  - Internet services
+  - Payment method
 
-## Technologies Used
-- Python
-- Machine Learning (Scikit-learn)
-- Flask (Web Framework)
-- SHAP (Explainable AI)
-- Pandas & NumPy
-- HTML & CSS
-- Pickle (Model persistence)
+## Technology Stack
+- Python – Core programming language
+- Flask – Backend web framework
+- Scikit-learn – Machine learning algorithms
+- SHAP – Explainable AI
+- Pandas & NumPy – Data preprocessing
+- HTML & CSS – Frontend user interface
+- Pickle – Model persistence
 
 ## Machine Learning Model
-- Model Type: Random Forest Classifier
+- Model used: Random Forest Classifier
 - Data preprocessing:
-  - Encoding categorical variables
+  - Categorical feature encoding
   - Feature scaling
-- Model evaluation:
+- Model evaluation metrics:
   - Accuracy
   - Precision
   - Recall
-  - F1-Score
+  - F1-score
 
-The trained model is saved and loaded using `pickle`.
+The trained model and preprocessing objects are saved and reused to ensure consistent predictions.
 
 ## Explainable AI with SHAP
-SHAP (SHapley Additive exPlanations) is used to explain individual predictions.
+SHAP (SHapley Additive exPlanations) is used to interpret model predictions.
 
-### Why SHAP?
-- Shows how each feature impacts the prediction
-- Improves trust and transparency
-- Helps businesses understand churn drivers
-
-### Use in this Project
-- Explains why a customer is predicted to churn
-- Highlights top contributing features
-- Supports responsible and interpretable AI
+### Purpose of SHAP in this Project
+- Explains how each feature contributes to churn prediction
+- Improves transparency and trust in the model
+- Helps businesses understand key churn drivers
 
 ## Application Workflow
-1. User enters customer details through the web interface.
-2. Input data is validated and preprocessed.
-3. Categorical features are encoded and numerical features are scaled.
-4. The trained machine learning model predicts whether the customer will churn.
-5. SHAP explains the prediction by highlighting important features.
-6. The prediction result is displayed on the web application.
+1. User enters customer details through the web interface  
+2. Input data is validated and preprocessed  
+3. Features are encoded and scaled using saved transformers  
+4. Trained machine learning model predicts churn probability  
+5. SHAP explains the prediction by highlighting feature impact  
+6. Final prediction is displayed to the user  
 
 ## Use Cases
-- Telecom companies to identify customers at risk of churn
-- Subscription-based businesses to improve customer retention
-- Marketing teams to target high-risk customers
-- Data science learning and academic projects
-- Demonstration of explainable AI in real-world systems
+- Telecom companies predicting customer churn
+- Subscription-based services improving retention strategies
+- Customer success teams identifying high-risk customers
+- Data science students learning ML deployment
+- Business analysts understanding churn behavior
+
 
